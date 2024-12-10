@@ -1,5 +1,5 @@
 import express from 'express'
-const app = express()
+const app = express() 
 import path from 'path'
 import { fileURLToPath } from 'url'
 import handlebars from 'express-handlebars'
@@ -7,8 +7,8 @@ import Handlebars from 'handlebars'
 import { allowInsecurePrototypeAccess } from '@handlebars/allow-prototype-access'
 
 /*CONFIGURAÇÃO DA PASTA ESTATICA*/
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+app.use(express.static(path.join(__dirname, 'public')))
 
 /**CONFIGURAÇÃO DA VISÃO */
 app.engine('handlebars', handlebars.engine({
@@ -17,11 +17,9 @@ app.engine('handlebars', handlebars.engine({
 }))
 app.set('view engine', 'handlebars')
 
-app.use(express.static(path.join(__dirname, 'public')))
-
+/**ROTAS DO SISTEMA */
 app.get('/', function(req, res){
-    var pessoa = {nome: 'Bruno', matricula: 1226388}
-    res.render('home/index', {pessoa: pessoa})
+    res.send('Sistema Controle de Estoque.')
 })
 
 app.listen(3000, ()=> console.log('Servidor truando em http://localhost:3000'))
