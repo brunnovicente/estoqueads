@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename)
 
 /**CONFIGURAÇÃO DA VISÃO */
 app.engine('handlebars', handlebars.engine({
-    defaultLayout: 'main',
+    defaultLayout: 'principal',
     handlebars: allowInsecurePrototypeAccess(Handlebars)
 }))
 app.set('view engine', 'handlebars')
@@ -20,7 +20,8 @@ app.set('view engine', 'handlebars')
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res){
-    res.send('Bem Vindo ao Estoque')
+    var pessoa = {nome: 'Bruno', matricula: 1226388}
+    res.render('home/index', {pessoa: pessoa})
 })
 
-app.listen(3000, ()=>'Servidor truando em http://localhost:3000')
+app.listen(3000, ()=> console.log('Servidor truando em http://localhost:3000'))
