@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.5",
+    "body-parser": "^1.20.3",
     "express": "^4.21.2",
     "express-handlebars": "^8.0.1",
     "handlebars": "^4.7.8"
