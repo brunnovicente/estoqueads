@@ -1,7 +1,19 @@
 <div class="col-md-6 mx-auto shadow p-3">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <h1 class="navbar-brand">Cadastrar Produtos</h1>
+
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="btn btn-sm btn-secondary" href="/produto" ><i class="fa-solid fa-angle-left"></i> Voltar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <form method="post" action="/cadastro">
         <fieldset>
-            <legend>Cadastro de Produto</legend>
+            <legend>Dados do Produto</legend>
 
             <label>DESCRIÇÃO</label>
             <input name="descricao" type="text" class="form-control">

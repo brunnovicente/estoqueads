@@ -40,6 +40,10 @@ app.get('/cadastro', function(req, res){
     res.render('produto/cadastro')
 })
 
+app.get('/produto', function (req, res){
+    res.render('produto/index')
+})
+
 app.post('/cadastro', function(req, res){
     var produto = {
         descricao: req.body.descricao,
