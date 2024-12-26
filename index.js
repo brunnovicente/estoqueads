@@ -55,4 +55,4 @@ app.post('/cadastro', function(req, res){
     res.render('produto/detalhe', {produto})
 })
 
-app.listen(3000, ()=> console.log('Servidor truando em http://localhost:3000'))
+app.listen(3200, ()=> console.log('Servidor truando em http://localhost:3200'))
