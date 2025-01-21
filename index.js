@@ -23,36 +23,10 @@ app.use(bodyParser.json())
 
 /**ROTAS DO SISTEMA */
 app.get('/', function(req, res){
-    
-    var aluno = {
-        nome: 'Fulaninho',
-        nota: 7.5
-    }
-
-    res.render('admin/index', {aluno})
+    res.render('admin/index')
 })
 
-app.get('/contato', function (req, res){
-    res.render('admin/contato')
-})
-
-app.get('/cadastro', function(req, res){
-    res.render('produto/cadastro')
-})
-
-app.get('/produto', function (req, res){
-    res.render('produto/index')
-})
-
-app.post('/cadastro', function(req, res){
-    var produto = {
-        descricao: req.body.descricao,
-        estoque: req.body.estoque,
-        preco: req.body.preco,
-        status: 1,
-        foto: '/img/semfoto.png'
-    }
-    res.render('produto/detalhe', {produto})
-})
+import produto from './routes/produto.js'
+app.use('/produto', produto)
 
 app.listen(3200, ()=> console.log('Servidor truando em http://localhost:3200'))
