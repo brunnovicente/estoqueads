@@ -1,0 +1,20 @@
+<h5>Listagem de Pessoas</h5>
+<a class="btn btn-success" href="/pessoa/cadastrar">Novo</a>
+<table class="table table-striped">
+    <tr>
+        <th>CPF</th>
+        <th>NOME</th>
+        <th>E-MAIL</th>
+        <th>TELEFONE</th>
+    </tr>
+
+    {{#each pessoas}}
+        <tr>
+            <td>{{cpf}}</td>
+            <td>{{nome}}</td>
+            <td>{{email}}</td>
+            <td>{{telefone}}</td>
+        </tr>
+    {{/each}}
+
+</table>
