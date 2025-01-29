@@ -32,4 +32,7 @@ app.use('/produto', produto)
 import pessoa from './routes/pessoa.js'
 app.use('/pessoa', pessoa)
 
+import usuario from './routes/usuario.js'
+app.use('/usuario', usuario)
+
 app.listen(3200, ()=> console.log('Servidor truando em http://localhost:3200'))
