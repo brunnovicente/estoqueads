@@ -1,21 +1,30 @@
 {
-  "name": "estoqueads",
+  "name": "estoquesimples",
   "version": "1.0.0",
-  "description": "Sistema de Estoque da Turma de ADS",
+  "description": "Sistema de Venda de Produtos usado em Sala de Aula",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
-  "author": "Bruno",
+  "author": "Bruno Vicente",
   "license": "ISC",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.5",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.3",
-    "express": "^4.21.2",
+    "connect-flash": "^0.1.1",
+    "express": "^4.21.1",
     "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.1",
     "handlebars": "^4.7.8",
-    "mysql2": "^3.12.0",
+    "jquery": "^3.7.1",
+    "mysql2": "^3.11.4",
+    "nodemailer": "^6.9.16",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
     "sequelize": "^6.37.5"
   }
 }

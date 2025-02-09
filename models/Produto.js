@@ -1,27 +1,26 @@
-import banco from "../config/banco.js"
+import banco from '../config/banco.js'
 
-const Produto = banco.sequelize.define('produtos',{
+const Produto = banco.sequelize.define('produtos', {
     id:{
         type: banco.Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
     descricao:{
-        type: banco.Sequelize.STRING(150)
+        type: banco.Sequelize.STRING,
     },
     preco:{
-        type: banco.Sequelize.FLOAT
+        type: banco.Sequelize.FLOAT,
     },
     estoque:{
-        type: banco.Sequelize.INTEGER
+        type: banco.Sequelize.INTEGER,
     },
     status:{
-        type: banco.Sequelize.INTEGER
+        type: banco.Sequelize.INTEGER,
     },
     foto:{
-        type: banco.Sequelize.STRING(250)
+        type: banco.Sequelize.STRING,
     }
 })
 
-//Produto.sync()
 export default Produto

@@ -5,25 +5,26 @@ const Pessoa = banco.sequelize.define('pessoas', {
         type: banco.Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true
-    }, 
+    },
     nome:{
-        type: banco.Sequelize.STRING(100)
+        type: banco.Sequelize.STRING(150),
     },
     telefone:{
-        type: banco.Sequelize.STRING(20)
+        type: banco.Sequelize.STRING(20),
     },
     email:{
-        type: banco.Sequelize.STRING(100),
+        type: banco.Sequelize.STRING(150),
         unique: true,
-        allowNull: false
+        allowNull: false,
     },
     cpf:{
         type: banco.Sequelize.STRING(20),
         unique: true,
-        allowNull: false
+        allowNull: false,
+    },
+    status:{
+        type: banco.Sequelize.INTEGER,
     }
 })
-
-Pessoa.sync()
 
 export default Pessoa

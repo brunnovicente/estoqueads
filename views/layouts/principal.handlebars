@@ -1,36 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estoque</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/all.css">
 </head>
 <body>
-
     <nav class="navbar bg-success">
         <div class="container-fluid">
             <span class="navbar-brand text-white mb-0 h1">
-                <a href="/" class="text-decoration-none text-white">IFMA Construções</a>
+                <a href="/admin" class="text-decoration-none text-white">IFMA Construções</a>
             </span>
             <div class="dropdown">
                 <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fa-solid fa-user"></i> Usuário
+                    <i class="fa-solid fa-user"></i>
                 </button>
+
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#"><i class="fa-regular fa-id-card"></i> Meus Dados</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-key"></i> Alterar Senha</a></li>
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            <i class="fa-regular fa-id-card"></i> Meus Dados
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="fa-solid fa-key"></i> Alterar Senha
+                        </a>
+                    </li>
 
                     <div class="dropdown-divider"></div>
                     <li>
-                        <a class="dropdown-item" href="#" ><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+                        <a class="dropdown-item" href="/usuario/logout" ><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    {{{body}}}
 
-    {{{body}}}    
     <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

@@ -5,10 +5,10 @@
 
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="btn btn-sm btn-primary mx-2" href="/produto/cadastro"><i class="fa-solid fa-plus"></i> Novo</a>
+                    <a class="btn btn-sm btn-primary mx-2" href="/produto/cadastrar"><i class="fa-solid fa-plus"></i> Novo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-sm btn-secondary" href="/" ><i class="fa-solid fa-angle-left"></i> Voltar</a>
+                    <a class="btn btn-sm btn-secondary" href="/admin" ><i class="fa-solid fa-angle-left"></i> Voltar</a>
                 </li>
             </ul>
         </div>
@@ -20,15 +20,21 @@
             <th class="col-5">DESCRIÇÃO</th>
             <th class="col-2">PREÇO</th>
             <th class="col-2">ESTOQUE</th>
+            <th class="col-2">
 
+            </th>
         </tr>
-        
         {{#each produtos}}
             <tr>
                 <td>{{id}}</td>
                 <td>{{descricao}}</td>
                 <td>{{preco}}</td>
                 <td>{{estoque}}</td>
+                <td>
+
+                    <button class="btn btn-sm btn-outline-danger" onclick="excluirProduto({{id}})"><i class="fa-solid fa-trash-can"></i> Exluir</button>
+                    <a class="btn btn-sm btn-outline-primary" href="/produto/editar/{{id}}"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+                </td>
             </tr>
         {{/each}}
 

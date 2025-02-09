@@ -1,2 +1,2 @@
-# estoqueads
-Controle de Estoque da Turma de ADS III
+# Estoque Simples
+Sistema de Venda de Produtos usado em Sala de Aula
