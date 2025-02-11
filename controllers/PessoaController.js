@@ -1,5 +1,7 @@
 import Pessoa from "../models/Pessoa.js";
+import Usuario from '../models/Usuario.js'
 import {Op} from "sequelize";
+import bcrypt from 'bcryptjs'
 
 class PessoaController {
      index = function (req, res) {
@@ -24,7 +26,7 @@ class PessoaController {
         })
 
         if(pessoa){
-            res.redirect('/pessoa/cadastro')
+            res.redirect('/pessoa/cadastrar')
         }else{
             let novo = {
                 nome: req.body.nome,
@@ -34,7 +36,29 @@ class PessoaController {
                 status: 1
             }
             Pessoa.create(novo).then(function(pessoa) {
-                res.redirect('/pessoa')
+                let novoUsuario = {
+                    login: pessoa.email,
+                    senha: req.body.senha,
+                    categoria: 0,
+                    status: 1,
+                    pessoa_id: pessoa.id
+                }
+
+                bcrypt.genSalt(10, function (erro, salt) {
+                    bcrypt.hash(novoUsuario.senha, salt, function (err, hash) {
+                        if(erro){
+                            req.flash('error_msg', "Erro ao salvar usuário!")
+                            res.redirect('/usuario/cadastrar')
+                        }
+                        novoUsuario.senha = hash
+                        Usuario.create(novoUsuario).then(function () {
+                            req.flash('success_msg', 'Cliente cadastrado com sucesso!')
+                            res.redirect('/pessoa')
+                        }).catch(function (error) {
+                            req.flash('error_msg', error.message)
+                        })
+                    })
+                })
             })
         }
     }//Fim do cadastro

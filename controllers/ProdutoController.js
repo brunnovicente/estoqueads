@@ -9,7 +9,6 @@ class ProdutoController {
                 status: 1,
             }
         });
-
         res.render('produto/index', {produtos: produtos});
     }
 
@@ -23,6 +22,7 @@ class ProdutoController {
         }
 
         Produto.create(produto).then(function (produto){
+            req.flash('success_msg', 'Produto cadastrado com sucesso!')
             res.redirect('/produto')
         })
     }
