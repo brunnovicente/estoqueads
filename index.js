@@ -9,6 +9,9 @@ import { fileURLToPath } from 'url';
 import { allowInsecurePrototypeAccess} from "@handlebars/allow-prototype-access";
 import session from 'express-session'
 import flash from 'connect-flash'
+import passport from 'passport';
+import auth from './config/autenticacao.js'
+auth(passport)
 
 ////////////////////////
 //CONFIGURAÇÕES
@@ -18,11 +21,15 @@ app.use(session({
      resave: true,
      saveUninitialized: false,
 }))
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(flash())
 
 app.use(function (req, res, next){
     res.locals.success_msg = req.flash("success_msg");
     res.locals.error_msg = req.flash("error_msg")
+    res.locals.error = req.flash('error')
+    res.locals.usuario = req.user || null
     next()
 })
 
